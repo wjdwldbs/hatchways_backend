@@ -8,17 +8,9 @@ const controller = {
   },
 
   route2: ({ query }, res) => {
-    let { tags, sortBy, direction } = query;
+    let { tags, sortBy = 'id', direction = 'asc' } = query;
     const sortByFields = ['id', 'reads', 'likes', 'popularity'];
     const directionFields = ['desc', 'asc'];
-
-    if(!sortBy){
-      sortBy = 'id';
-    }
-    
-    if(!direction){
-      direction = 'asc';
-    }
 
     if (!tags){
       res.status(400).send({
