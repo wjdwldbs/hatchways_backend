@@ -9,7 +9,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/ping', controller.fetchData);
+app.get('/api/ping', controller.route1);
 app.get('/api/posts', controller.fetchDataTags);
 
 app.listen(port, function() {
