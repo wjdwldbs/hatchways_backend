@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/ping', controller.route1);
-app.get('/api/posts', controller.fetchDataTags);
+app.get('/api/posts', controller.route2);
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);

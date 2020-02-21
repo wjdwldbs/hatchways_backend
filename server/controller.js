@@ -7,10 +7,18 @@ const controller = {
     })
   },
 
-  fetchDataTags: ({ query }, res) => {
-    const { tags, sortBy, direction } = query;
+  route2: ({ query }, res) => {
+    let { tags, sortBy, direction } = query;
     const sortByFields = ['id', 'reads', 'likes', 'popularity'];
     const directionFields = ['desc', 'asc'];
+
+    if(!sortBy){
+      sortBy = 'id';
+    }
+    
+    if(!direction){
+      direction = 'asc';
+    }
 
     if (!tags){
       res.status(400).send({
@@ -66,7 +74,7 @@ const controller = {
             ))
           }
         }
-        
+
         res.status(200).send(allCollection);
       }))
       .catch(err => {
