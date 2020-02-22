@@ -31,7 +31,7 @@ const controller = {
     }
 
     if(tags.indexOf(',') !== -1){
-      
+
       const tagsCollection = tags.split(',');
       const allResults = tagsCollection.map((tag) => {
         return axios.get(`https://hatchways.io/api/assessment/blog/posts`, {
@@ -70,9 +70,8 @@ const controller = {
         res.status(200).send(allCollection);
       }))
       .catch(err => {
-        res.status(400).send({
-          error: 'Tags parameter is required'
-        })
+        console.log(err);
+        res.status(400).send(`Unsuccessful GET request due to following error ${err}`);
       });
 
     } else {

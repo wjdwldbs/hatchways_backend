@@ -85,6 +85,7 @@ describe('GET route2', (done) => {
         ids.push(body.posts[i].id);
         sortedIDs.push(body.posts[i].id);
       }
+      
       sortedIDs = sortedIDs.sort((a, b) => {
         return a - b;
       })
