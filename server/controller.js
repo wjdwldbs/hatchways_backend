@@ -11,7 +11,7 @@ const controller = {
     let { tags, sortBy = 'id', direction = 'asc' } = query;
     const sortByFields = ['id', 'reads', 'likes', 'popularity'];
     const directionFields = ['desc', 'asc'];
-
+    console.log(tags)
     if (!tags){
       res.status(400).send({
         error: "Tags parameter is required"
@@ -31,7 +31,6 @@ const controller = {
     }
 
     if(tags.indexOf(',') !== -1){
-
       const tagsCollection = tags.split(',');
       const allResults = tagsCollection.map((tag) => {
         return axios.get(`https://hatchways.io/api/assessment/blog/posts`, {
@@ -75,7 +74,7 @@ const controller = {
       });
 
     } else {
-
+      
       axios.get(`https://hatchways.io/api/assessment/blog/posts`, {
         params: {
           tag: tags,

@@ -1,9 +1,7 @@
 let assert = require('assert');
-let chai = require('chai');
-var expect = chai.expect;
 var request = require("request");
 
-describe('GET route1', (done) => {
+describe('GET route1', () => {
   it('should send back SUCCESSFUL status code of 200 for successful API request', (done) => {
     request.get('http://localhost:3000/api/ping', (error, response, body) => {
       assert.equal(response.statusCode, 200)
@@ -30,7 +28,7 @@ describe('GET route1', (done) => {
 
 });
 
-describe('GET route2', (done) => {
+describe('GET route2', () => {
 
   const tags = ['tech', 'health', 'history', 'science', 'startups', 'design', 'culture', 'politics']
   const sortByFields = ['id', 'reads', 'likes', 'popularity'];

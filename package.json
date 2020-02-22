@@ -5,13 +5,12 @@
   "main": "server",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "start": "nodemon server"
+    "start": "PORT=3000 nodemon server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.2.0",
     "mocha": "^7.0.1",
     "nodemon": "^1.19.3"
   },
