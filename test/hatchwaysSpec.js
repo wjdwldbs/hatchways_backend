@@ -21,7 +21,7 @@ describe('GET route1', (done) => {
     });
   });
 
-  it('should send back UNSUCCESSFUL status code for incorrect URL route', (done) => {
+  it('should send back UNSUCCESSFUL status code for invalid URL route', (done) => {
     request.get('http://localhost:3000/api/noping', (error, response, body) => {
       assert.equal(response.statusCode, 404)
       done();
@@ -85,7 +85,7 @@ describe('GET route2', (done) => {
         ids.push(body.posts[i].id);
         sortedIDs.push(body.posts[i].id);
       }
-      
+
       sortedIDs = sortedIDs.sort((a, b) => {
         return a - b;
       })
