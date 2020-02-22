@@ -3,7 +3,7 @@ const axios = require('axios');
 const controller = {
   route1: (req, res) => {
     res.status(200).send({
-      "success": true
+      success: true
     })
   },
 
@@ -31,7 +31,7 @@ const controller = {
     }
 
     if(tags.indexOf(',') !== -1){
-
+      
       const tagsCollection = tags.split(',');
       const allResults = tagsCollection.map((tag) => {
         return axios.get(`https://hatchways.io/api/assessment/blog/posts`, {
